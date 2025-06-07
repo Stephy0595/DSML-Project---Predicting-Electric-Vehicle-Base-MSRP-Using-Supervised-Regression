@@ -44,5 +44,22 @@ A clean and structured dataset is essential for effective modeling. The followin
  Dataset is now clean and ready for modeling.
 
 
+## Model Evaluation
+To evaluate the performance of our regression models, we used the following metrics:
 
+- Evaluation Metrics
+R² Score (Coefficient of Determination): Measures how well the model explains variance in the target variable. Higher is better.
+
+MSE (Mean Squared Error): Average squared difference between predicted and actual values. Lower is better.
+
+MAE (Mean Absolute Error): Average absolute difference between predicted and actual values. Lower is better.
+
+RMSE (Root Mean Squared Error): Square root of MSE, gives error in original units. Lower is bette
+
+### Interpretation
+- Random Forest Regressor delivered the best results among all models:
+
+Highest R² Score (0.9244)
+
+Lowest MAE (448.30) and RMSE (760.33)
 
