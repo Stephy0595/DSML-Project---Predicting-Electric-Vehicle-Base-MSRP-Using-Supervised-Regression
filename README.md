@@ -27,7 +27,7 @@ Understanding how features such as **range**, **battery capacity**, and **model 
 
 ##  Objectives
 
-### Phase 1. Data Preprocessing & Cleaning
+## Phase 1. Data Preprocessing & Cleaning
 
 A clean and structured dataset is essential for effective modeling. The following steps were applied:
 
@@ -44,22 +44,37 @@ A clean and structured dataset is essential for effective modeling. The followin
  Dataset is now clean and ready for modeling.
 
 
-## Model Evaluation
-To evaluate the performance of our regression models, we used the following metrics:
+## Phase 2.  Model Evaluation
 
-- Evaluation Metrics
-R² Score (Coefficient of Determination): Measures how well the model explains variance in the target variable. Higher is better.
+To evaluate model performance in predicting the Base MSRP of electric vehicles, six supervised regression models were assessed using:
 
-MSE (Mean Squared Error): Average squared difference between predicted and actual values. Lower is better.
+- **R² Score** – Variance explained by the model.
+- **MSE (Mean Squared Error)** – Penalizes large errors.
+- **MAE (Mean Absolute Error)** – Average magnitude of errors.
+- **RMSE (Root Mean Squared Error)** – Square root of MSE, in MSRP units.
 
-MAE (Mean Absolute Error): Average absolute difference between predicted and actual values. Lower is better.
+ ###  Results Summary
 
-RMSE (Root Mean Squared Error): Square root of MSE, gives error in original units. Lower is bette
+| Model                       | R² Score | MSE          | MAE       | RMSE     |
+|----------------------------|----------|--------------|-----------|----------|
+| Linear Regression          | 0.8051   | 1,212,303.66 | 654.92    | 1,100.14 |
+| Decision Tree Regressor    | 0.9026   | 725,039.79   | 479.11    | 851.49   |
+| Random Forest Regressor    | 0.9244   | 577,997.18   | 448.30    | 760.33   |
+| Gradient Boosting Regressor| 0.9201   | 607,245.41   | 461.75    | 779.31   |
+| Support Vector Regressor   | 0.5514   | 2,446,690.90 | 928.94    | 1,563.17 |
+| MLP Regressor              | 0.8917   | 806,504.39   | 506.52    | 897.50   |
 
-### Interpretation
-- Random Forest Regressor delivered the best results among all models:
+ ###  Key Insights
 
-Highest R² Score (0.9244)
+- **Random Forest Regressor** delivered the best results, with the highest R² and lowest errors.
+- **Gradient Boosting** closely followed, also showing strong generalization.
+- **MLP Regressor** (neural network) performed well, though slightly less than ensemble models.
+- **Support Vector Regressor** had the weakest performance, suggesting room for tuning.
+- **Linear Regression** couldn’t capture complex relationships effectively.
 
-Lowest MAE (448.30) and RMSE (760.33)
+ ###  Visual Evaluation
+
+- Actual vs Predicted Plots  
+- Residual Plots  
+- Feature Importance Graphs (for tree-based models)  
 
