@@ -1,6 +1,6 @@
 # Predicting Electric Vehicle Base MSRP Using Supervised Regression
 
-## Problem Statement
+## *Problem Statement*
 The objective of this project is to develop a **predictive regression model** that estimates the **Base MSRP (Manufacturer’s Suggested Retail Price)** of electric vehicles (EVs) based on their specifications and characteristics.
 
 Understanding how features such as **range**, **battery capacity**, and **model year** affect EV pricing is crucial for stakeholders including:
@@ -9,7 +9,7 @@ Understanding how features such as **range**, **battery capacity**, and **model 
 - **Policymakers**: Evaluate the impact of EV incentive programs  
 - **Consumers & Analysts**: Understand market value and pricing trends
 
- ##  Dataset Overview
+##  *Dataset Overview*
 
 - **Source**: [Electric Vehicle Population Data – data.gov](https://catalog.data.gov/dataset/electric-vehicle-population-data)
 - **Type**: Public government dataset  
@@ -17,17 +17,13 @@ Understanding how features such as **range**, **battery capacity**, and **model 
 
 
 
-##  Project Type
+##  *Project Type*
 
 - **Learning Type**: Supervised Learning  
 - **Modeling Task**: Regression  
-- **Target Variable**: `Base MSRP`  
+- **Target Variable**: `Base MSRP`
 
-
-
-##  Objectives
-
-## Phase 1. Data Preprocessing & Cleaning
+ # *Phase 1. Data Preprocessing & Cleaning*
 
 A clean and structured dataset is essential for effective modeling. The following steps were applied:
 
@@ -43,8 +39,7 @@ A clean and structured dataset is essential for effective modeling. The followin
 
  Dataset is now clean and ready for modeling.
 
-
-## Phase 2.  Model Evaluation
+# *Phase 2.  Model Evaluation*
 
 To evaluate model performance in predicting the Base MSRP of electric vehicles, six supervised regression models were assessed using:
 
@@ -53,18 +48,13 @@ To evaluate model performance in predicting the Base MSRP of electric vehicles, 
 - **MAE (Mean Absolute Error)** – Average magnitude of errors.
 - **RMSE (Root Mean Squared Error)** – Square root of MSE, in MSRP units.
 
- ###  Results Summary
+## *Model Performance Summary*
 
-| Model                       | R² Score | MSE          | MAE       | RMSE     |
-|----------------------------|----------|--------------|-----------|----------|
-| Linear Regression          | 0.8051   | 1,212,303.66 | 654.92    | 1,100.14 |
-| Decision Tree Regressor    | 0.9026   | 725,039.79   | 479.11    | 851.49   |
-| Random Forest Regressor    | 0.9244   | 577,997.18   | 448.30    | 760.33   |
-| Gradient Boosting Regressor| 0.9201   | 607,245.41   | 461.75    | 779.31   |
-| Support Vector Regressor   | 0.5514   | 2,446,690.90 | 928.94    | 1,563.17 |
-| MLP Regressor              | 0.8917   | 806,504.39   | 506.52    | 897.50   |
+| Best Model             | R² Score | MSE    | MAE    | RMSE   |
+| ----------------- | -------- | ------ | ------ | ------ |
+| **Random Forest** | 0.9900   | 0.0099 | 0.0025 | 0.0996 |
 
- ###  Key Insights
+##  *Key Insights*
 
 - **Random Forest Regressor** delivered the best results, with the highest R² and lowest errors.
 - **Gradient Boosting** closely followed, also showing strong generalization.
@@ -72,9 +62,14 @@ To evaluate model performance in predicting the Base MSRP of electric vehicles, 
 - **Support Vector Regressor** had the weakest performance, suggesting room for tuning.
 - **Linear Regression** couldn’t capture complex relationships effectively.
 
- ###  Visual Evaluation
+##  *Visual Evaluation*
+ 
+- **Actual vs Predicted Plots** to visually assess prediction accuracy.
 
-- Actual vs Predicted Plots  
-- Residual Plots  
-- Feature Importance Graphs (for tree-based models)  
+- **Residual Plots** to check the distribution and randomness of errors.
+
+- **Feature Importance Graphs** (for tree-based models) to identify the most influential features driving the predictions.
+
+## *Conclusion*
+This project demonstrates how ensemble-based regression models, especially Random Forest, can effectively predict EV prices using structured data. The approach supports informed decision-making for stakeholders across the EV ecosystem.
 
